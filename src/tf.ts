@@ -2,10 +2,19 @@ import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 
+interface Process {
+	mainModule: any;
+	env: any;
+	argv: any[];
+	exit: Function;
+	cwd: Function;
+}
+declare var process: Process;
+
 const HOME = process.env.HOME || '~';
 const argv = process.argv.splice(2);
 
-const DIR = p => path.join(__dirname, p);
+const DIR = p => path.join(process.mainModule.path, p);
 let TF_DIR_PATH = path.join(HOME, '.tf');
 
 if ( !fs.existsSync(TF_DIR_PATH) ) {
@@ -32,7 +41,7 @@ const findTFConfig = (dir: string) => {
 }
 
 const g_options: GlobalOptions = {
-	'author'        : '',
+	'author'      : '',
 	'email'       : '',
 	'license'     : 'MIT',
 };

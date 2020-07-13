@@ -1,7 +1,12 @@
 {
 	"name": "template-touch-file",
-	"version": "1.0.0",
-	"author": "tree-some",
+	"version": "1.0.1",
+	"description": "Create prefix comment template file.",
+	"author": {
+		"name": "tree-some",
+		"email": "youn@tree-some.dev"
+	},
+	"main": "dist/tf",
 	"license": "MIT",
 	"bin": {
 		"tf": "dist/tf"
