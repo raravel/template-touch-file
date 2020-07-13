@@ -69,7 +69,8 @@ if ( argv.length < 1 ) {
 const tfConfigPath = findTFConfig(process.cwd());
 
 if ( tfConfigPath ) {
-	const opt = require(tfConfigPath);
+	const optStr = fs.readFileSync(tfConfigPath, { encoding: 'utf8' });
+	const opt = JSON.parse(optStr);
 	if ( opt.author ) g_options.author = opt.author;
 	if ( opt.email ) g_options.email = opt.email;
 	if ( opt.license ) g_options.license = opt.license;
