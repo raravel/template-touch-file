@@ -1,0 +1,22 @@
+{
+	"name": "template-touch-file",
+	"version": "1.0.0",
+	"author": "tree-some",
+	"license": "MIT",
+	"bin": {
+		"tf": "dist/tf"
+	},
+	"scripts": {
+		"test": "ts-node src/tf.ts",
+		"build": "webpack --config webpack.config.js && chmod 775 ./dist/tf"
+	},
+	"devDependencies": {
+		"@types/node": "^14.0.13",
+		"@types/typescript": "^2.0.0",
+		"ts-loader": "^7.0.5",
+		"ts-node": "^8.10.2",
+		"typescript": "^3.9.5",
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.11"
+	}
+}
