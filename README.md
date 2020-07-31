@@ -11,7 +11,7 @@ npm install -g template-touch-file
 
 ## Usage
 
-```sh
+```
 $ tf
 Usage: tf [options...] [file]
        file:   target file path
